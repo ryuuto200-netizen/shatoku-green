@@ -1,0 +1,62 @@
+div></div>
+<div class="rei"><div class="rei-h">例題2　静止画のデータ量（768×512画素・8ビット×3色）</div><div class="rei-b">
+    画像[bit]＝<span class="h" data-item="232" data-level="3">総画素数（縦×横） × 1画素あたりのビット数</span><br/>
+    (768×512)画素×(8×3)bit → ÷(1024×8) ＝ <span class="h" data-item="233" data-level="6">1152</span>KB<br/>
+    ※24bitフルカラーは1画素＝<span class="h" data-item="234" data-level="6">3</span>バイト
+  </div></div>
+<div class="rei"><div class="rei-h">例題3　動画のフレーム数（30fps・5分）</div><div class="rei-b">
+    30fps×(5×60)秒＝<span class="h" data-item="235" data-level="6">9000</span>フレーム<br/>
+    動画のデータ量＝<span class="h" data-item="236" data-level="3">1フレームの画像データ量 × フレームレート × 秒数</span>（圧縮しない場合）
+  </div></div>
+</section>
+<!-- ============ p.62-63 ============ -->
+<section class="page">
+<div class="pg">p.62–63</div>
+<div class="unit-bar"><div class="unit-num">13</div><div class="unit-title"><b>データの圧縮①</b><small>可逆・非可逆／圧縮率／圧縮形式</small></div></div>
+<div class="secline"><button onclick="secAll(this)">このページを一括切替</button></div>
+<h3 class="sec">1　圧縮</h3>
+<ul>
+<li>情報をできる限り保ったままデータのファイルサイズを小さくする処理＝<span class="h" data-item="237" data-level="1">圧縮</span>。元に戻す処理＝<span class="h" data-item="238" data-level="1">伸張</span>（解凍・展開）。記録容量やファイル転送時の<span class="h" data-item="239" data-level="5">通信時間</span>の節約に欠かせない。</li>
+</ul>
+<h4 class="sub">1　可逆圧縮と非可逆圧縮</h4>
+<ul>
+<li>データに含まれる同じ情報や不要な部分＝<span class="h" data-item="240" data-level="2">冗長</span>（な部分）。これを取り除いて圧縮する。</li>
+<li><span class="h" data-item="241" data-level="1">可逆圧縮</span>：伸張すると圧縮前と<span class="h" data-item="242" data-level="3">完全に同一</span>のものに戻る。1ビットでも欠損・改変すると正しく利用できない<span class="h" data-item="243" data-level="4">文書ファイルやプログラムファイル</span>などに使用。</li>
+<li><span class="h" data-item="244" data-level="1">非可逆圧縮</span>：重要度の低い情報を取り除き、さらに<span class="h" data-item="245" data-level="5">小さく</span>できるが、元には<span class="h" data-item="246" data-level="3">戻らない</span>。多少の欠損があっても影響が小さい<span class="h" data-item="247" data-level="4">画像・音声</span>などに使用。</li>
+</ul>
+<h4 class="sub">2　圧縮率</h4>
+<div class="rei"><div class="rei-h">例題1　圧縮率</div><div class="rei-b">
+    圧縮率[%]＝<span class="h" data-item="248" data-level="3">圧縮後のデータ量 ÷ 圧縮前のデータ量 × 100</span><br/>
+    A：100KB→80KB＝<span class="h" data-item="249" data-level="5">80</span>%、B：100KB→60KB＝<span class="h" data-item="250" data-level="5">60</span>%<br/>
+    → この定義では値が<span class="h" data-item="251" data-level="5">小さい</span>ほど、より小さく圧縮されている（圧縮率が高い＝<span class="h" data-item="252" data-level="6">B</span>）。<br/>
+    ※非可逆圧縮で圧縮率を高くしすぎると画質・音質は<span class="h" data-item="253" data-level="5">低下</span>する。
+  </div></div>
+<h3 class="sec">2　圧縮形式とその利用</h3>
+<h4 class="sub">1　圧縮・伸張のためのソフトウェア</h4>
+<ul>
+<li>元のデータを圧縮形式に変換＝<span class="h" data-item="254" data-level="2">エンコード</span>、逆の処理＝<span class="h" data-item="255" data-level="2">デコード</span>。行うプログラム＝エンコーダ・デコーダ、両機能を組み込んだプログラムや装置＝<span class="h" data-item="256" data-level="1">コーデック</span>。</li>
+</ul>
+<h4 class="sub">2　圧縮形式</h4>
+<h4 class="sub">圧縮形式の例</h4>
+<table>
+<tr><th>形式</th><th>特徴</th></tr>
+<tr><td>ZIP</td><td><span class="h" data-item="257" data-level="4">可逆</span>圧縮。さまざまなファイルに広く使われる</td></tr>
+<tr><td>JPEG</td><td><span class="h" data-item="258" data-level="4">非可逆</span>圧縮の<span class="h" data-item="259" data-level="4">静止画</span>形式</td></tr>
+<tr><td>MPEG-4（H.264）</td><td><span class="h" data-item="260" data-level="4">動画</span>の圧縮形式</td></tr>
+<tr><td>AAC</td><td><span class="h" data-item="261" data-level="4">音声</span>の非可逆圧縮形式。人間の可聴域（20〜<span class="h" data-item="262" data-level="5">20000</span>Hz）を超える音などを取り除き圧縮率を高める</td></tr>
+</table>
+<div class="rei"><div class="rei-h">ストリーミング再生</div><div class="rei-b">
+    音声や動画のデータをすべて受信し終える前に、受信した部分から順に再生する方法を<span class="h" data-item="263" data-level="1">ストリーミング再生</span>という。待ち時間を短縮できるが、通信速度が不足すると再生が途切れることがある。
+  </div></div>
+</section>
+<!-- ============ p.64-65 ============ -->
+<section class="page">
+<div class="pg">p.64–65</div>
+<div class="unit-bar"><div class="unit-num">13</div><div class="unit-title"><b>データの圧縮②</b><small>可逆圧縮の考え方／画像の圧縮形式</small></div></div>
+<div class="secline"><button onclick="secAll(this)">このページを一括切替</button></div>
+<h3 class="sec">3　可逆圧縮の考え方</h3>
+<ul>
+<li><b>①同じデータが並んでいる数を付加</b>：「同じデータが何個並んでいるか」を数えて記録＝<span class="h" data-item="264" data-level="1">ランレングス圧縮</span>。例）「すもももももももものうち」→「すも<span class="h" data-item="265" data-level="6">も8</span>のうち」。連続が少ないデータでは逆にデータ量が<span class="h" data-item="266" data-level="5">増える</span>こともある。</li>
+<li><b>②以前に現れた位置と長さの情報を付加</b>：「何文字前と同じ」という情報を付けて記録＝<span class="h" data-item="267" data-level="1">LZ圧縮</span>。改良版の<span class="h" data-item="268" data-level="2">LZW</span>圧縮は出現した文字列を<span class="h" data-item="269" data-level="4">辞書</span>に登録し、登録番号を用いて圧縮効率を高める。</li>
+<li><b>③出現頻度の高いデータに短いコードを付与</b>＝<span class="h" data-item="270" data-level="1">ハフマン圧縮</span>。出現頻度の<span class="h" data-item="271" data-level="5">高い</span>データほど<span class="h" data-item="272" data-level="5">短い</span>ビット数のコードを割り当てる（モールス符号も同じ発想：頻度の高い「E」は短い符号）。</li>
+<li><b>④変化のあるところだけを変更</b>：動画では、規則に基づき全体を保存したフレーム＝<span class="h" data-item="273" data-level="1">キーフレーム</span>を作成し、他は変化した部分（<span class="h" data-item="274" data-level="2">差分</span>）だけを保存する。固定カメラなど変化が<span class="h" data-item="275" data-level="5">少ない</span>動画ほど圧縮効果
