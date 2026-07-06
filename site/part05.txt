@@ -1,0 +1,46 @@
+桁＝16進数1桁）。</li>
+<li>10進→2進：<span class="h" data-item="126" data-level="3">2で割った余り</span>を下から並べる。例）13→<span class="h" data-item="127" data-level="6">1101</span><sub>(2)</sub></li>
+<li>2進→10進：各桁×<span class="h" data-item="128" data-level="3">2のべき乗</span>の和。例）1101<sub>(2)</sub>＝8+4+0+1＝<span class="h" data-item="129" data-level="6">13</span></li>
+</ul>
+<div class="rei"><div class="rei-h">例題1　数値表現の変換</div><div class="rei-b">
+    22<sub>(10)</sub>＝<span class="h" data-item="130" data-level="6">10110</span><sub>(2)</sub>＝<span class="h" data-item="131" data-level="6">16</span><sub>(16)</sub>　／　45<sub>(10)</sub>＝<span class="h" data-item="132" data-level="6">101101</span><sub>(2)</sub>＝<span class="h" data-item="133" data-level="6">2D</span><sub>(16)</sub><br/>
+    189<sub>(10)</sub>＝<span class="h" data-item="134" data-level="6">10111101</span><sub>(2)</sub>＝<span class="h" data-item="135" data-level="6">BD</span><sub>(16)</sub>　／　219<sub>(10)</sub>＝<span class="h" data-item="136" data-level="6">11011011</span><sub>(2)</sub>＝<span class="h" data-item="137" data-level="6">DB</span><sub>(16)</sub><br/>
+    ※2進→16進は<span class="h" data-item="138" data-level="3">右から4桁ずつ</span>区切って各4桁を変換
+  </div></div>
+<div class="rei"><div class="rei-h">Plus　10進法と16進法の変換</div><div class="rei-b">
+    10進数を16進数にするには、数を<span class="h" data-item="139" data-level="3">16で割り</span>、余りを下から並べる。余り10〜15は順に<span class="h" data-item="140" data-level="3">A〜F</span>で表す。16進数を10進数にするには、各桁に<span class="h" data-item="141" data-level="3">16のべき乗</span>を掛けて加える。例：2D<sub>(16)</sub>＝2×16＋13＝<span class="h" data-item="142" data-level="6">45</span><sub>(10)</sub>。
+  </div></div>
+</section>
+<!-- ============ p.56-57 ============ -->
+<section class="page">
+<div class="pg">p.56–57</div>
+<div class="unit-bar"><div class="unit-num">12</div><div class="unit-title"><b>情報のデジタル化①</b><small>文字の表現／標本化・量子化・符号化</small></div></div>
+<div class="secline"><button onclick="secAll(this)">このページを一括切替</button></div>
+<h3 class="sec">1　文字の表現</h3>
+<ul>
+<li>文字や記号を0と1の組み合わせで表すための取り決め＝<span class="h" data-item="143" data-level="1">文字コード</span>。1バイトで2<sup>8</sup>＝<span class="h" data-item="144" data-level="4">256</span>種類、2バイトで2<sup>16</sup>＝<span class="h" data-item="145" data-level="4">65536</span>種類の文字を表せる。英数字・記号は<span class="h" data-item="146" data-level="4">1</span>バイト、漢字などは<span class="h" data-item="147" data-level="4">2</span>バイト以上で表す。</li>
+<li>日本語対応の文字コード：日本で初めて制定された<span class="h" data-item="148" data-level="2">JIS</span>コード、他に<span class="h" data-item="149" data-level="2">シフトJIS</span>コード、<span class="h" data-item="150" data-level="2">EUC</span>など。</li>
+<li>同じ2進数のコードでも別の文字として表示される現象や、他の機種で正しく表示されない<span class="h" data-item="151" data-level="1">機種依存文字</span>が文字化けの原因になる。</li>
+<li><span class="h" data-item="152" data-level="1">Unicode</span>：さまざまな言語の文字を扱える世界標準。<span class="h" data-item="153" data-level="1">UTF-8</span>はUnicodeの一種で、1文字を<span class="h" data-item="154" data-level="4">1〜6</span>バイトの可変長で表現する。</li>
+</ul>
+<div class="rei"><div class="rei-h">Plus　ASCIIコード</div><div class="rei-b">
+<span class="h" data-item="155" data-level="2">ASCII</span>コードは1963年に米国で制定された文字コードで、<span class="h" data-item="156" data-level="4">7</span>ビットを用いて英数字・記号・制御文字など<span class="h" data-item="157" data-level="4">128</span>種類を表す。
+  </div></div>
+<h3 class="sec">2　標本化・量子化・符号化</h3>
+<h4 class="sub">①　標本化（サンプリング）</h4>
+<p>アナログ信号を一定の時間間隔で区切り、各区間ごとに信号の値（電圧など）を取り出す操作。この間隔＝<span class="h" data-item="158" data-level="1">標本化周期</span>、取り出した点＝<span class="h" data-item="159" data-level="2">標本点</span>。</p>
+<h4 class="sub">②　量子化</h4>
+<p>標本点の値を、最大値を決めて一定間隔に分けた<span class="h" data-item="160" data-level="3">段階値</span>のうち最も近いものにそろえる操作。段階数を決める＝<span class="h" data-item="161" data-level="1">量子化ビット数</span>。nビットのとき<span class="h" data-item="162" data-level="3">2のn乗</span>段階。段階の数が多いほど標本点との差＝<span class="h" data-item="163" data-level="1">量子化誤差</span>は<span class="h" data-item="164" data-level="5">小さく</span>なる。</p>
+<h4 class="sub">③　符号化</h4>
+<p>量子化した値を<span class="h" data-item="165" data-level="3">2進数</span>で表現すること。</p>
+<div class="rei"><div class="rei-h">Column　標本化定理</div><div class="rei-b">標本化周期が長いと元の波形を再現できない。再現したい波の周期の<span class="h" data-item="166" data-level="3">半分より短い</span>周期（＝再現したい周波数の<span class="h" data-item="167" data-level="3">2倍より高い</span>標本化周波数）で標本化すれば元の波形を再現できる。これを<span class="h" data-item="168" data-level="1">標本化定理</span>という。</div></div>
+</section>
+<!-- ============ p.58-59 ============ -->
+<section class="page">
+<div class="pg">p.58–59</div>
+<div class="unit-bar"><div class="unit-num">12</div><div class="unit-title"><b>情報のデジタル化②</b><small>音のデジタル化／画像のデジタル化</small></div></div>
+<div class="secline"><button onclick="secAll(this)">このページを一括切替</button></div>
+<h3 class="sec">3　音のデジタル化</h3>
+<ul>
+<li>音は空気の<span class="h" data-item="169" data-level="3">振動</span>が伝わる波の現象。1秒間に通過する波の数＝<span class="h" data-item="170" data-level="1">周波数</span>（単位<span class="h" data-item="171" data-level="3">ヘルツ[Hz]</span>）、1個の波が伝わる時間＝<span class="h" data-item="172" data-level="1">周期</span>（単位 秒[s]）。周波数[Hz]＝<span class="h" data-item="173" data-level="3">1÷周期[秒]</span>。</li>
+<li>標本化の間隔を<span class="h" data-item="174" data-level="2">標本化周期</span>、1秒間に標本化する回数を<span c
