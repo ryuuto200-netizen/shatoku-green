@@ -1,0 +1,50 @@
+pan class="h" data-item="73" data-level="4">double</span>＝二重線</td></tr>
+</table>
+<ul>
+<li>色の指定：色名（white, red など）または<span class="h" data-item="74" data-level="3">色コード</span>。#ff0000（<span class="h" data-item="75" data-level="6">赤</span>）、#00ff00（<span class="h" data-item="76" data-level="6">緑</span>）、#0000ff（<span class="h" data-item="77" data-level="6">青</span>）のように「#」に続く<span class="h" data-item="78" data-level="3">16進数</span>6桁で表す。</li>
+<li>Webセーフカラー：OSや環境の違いによる色の差異が少ない<span class="h" data-item="79" data-level="4">216</span>色。</li>
+</ul>
+<div class="rei"><div class="rei-h">Column　レスポンシブデザイン</div><div class="rei-b">閲覧者の端末の種類（PC・スマートフォンなど）に合わせて異なる<span class="h" data-item="80" data-level="6">CSS</span>を読み込ませ、端末に適したスタイルを提供する考え方を<span class="h" data-item="81" data-level="1">レスポンシブデザイン</span>という。</div></div>
+<h3 class="sec">4　Webページの公開</h3>
+<h4 class="sub">1　公開の方法</h4>
+<ul>
+<li>作成したWebページは <span class="h" data-item="82" data-level="1">Webサーバ</span> にアップロードして公開する。</li>
+<li>ファイル転送のための通信規格＝<span class="h" data-item="83" data-level="1">FTP</span>（File Transfer Protocol）。通信内容を暗号化した <span class="h" data-item="84" data-level="3">FTPS</span>（FTP Secure）や、<span class="h" data-item="85" data-level="4">SSH</span>（Secure Shell）を使う <span class="h" data-item="86" data-level="3">SFTP</span> なども使われている。</li>
+<li>ブラウザ上で必要なテキストや画像・レイアウト情報を登録してWebページを作成する仕組み＝<span class="h" data-item="87" data-level="1">CMS</span>（Contents Management System）。</li>
+</ul>
+<h4 class="sub">2　Webサイトの評価と改善</h4>
+<ul>
+<li>公開後も評価を行い、<span class="h" data-item="88" data-level="4">閲覧者の要望</span>に応えられているか、<span class="h" data-item="89" data-level="4">操作性</span>がよいか、サイトの<span class="h" data-item="90" data-level="4">目的</span>を達成できているかを確認する。</li>
+<li>最初に目につく<span class="h" data-item="91" data-level="4">タイトルや画像</span>を工夫し、SNSや関連サイトからの<span class="h" data-item="92" data-level="4">リンク</span>を増やすなどして利用者に見つけてもらいやすくする。</li>
+<li>内部的には、古い情報の<span class="h" data-item="93" data-level="4">修正・削除</span>、サイトマップや内部リンクの最適化などを行う。</li>
+<li>検索サイトで検索されやすい語句をタイトルやキーワードに設定し、検索結果の上位に表示されるよう最適化すること＝<span class="h" data-item="94" data-level="1">SEO対策</span>（検索エンジン最適化）。</li>
+</ul>
+<div class="rei"><div class="rei-h">Plus　アクセス解析</div><div class="rei-b">
+    Webサーバに記録されるページごとの<span class="h" data-item="95" data-level="3">アクセス数</span>（ページビュー数）、閲覧時間帯、利用端末などを調べることを<span class="h" data-item="96" data-level="1">アクセス解析</span>という。分析結果をWebサイトの改善に役立てる。
+  </div></div>
+</section>
+<!-- ============ p.54-55 ============ -->
+<section class="page">
+<div class="pg">p.54–55</div>
+<div class="unit-bar"><div class="unit-num">11</div><div class="unit-title"><b>アナログとデジタル</b><small>2進法・情報量の単位・進法変換</small></div></div>
+<div class="secline"><button onclick="secAll(this)">このページを一括切替</button></div>
+<h3 class="sec">1　アナログとデジタル</h3>
+<ul>
+<li><span class="h" data-item="97" data-level="1">アナログ</span>：温度・音の強さ・光の明るさ・電圧などの<span class="h" data-item="98" data-level="3">連続的</span>に変化する量を、連続的に変化する量で表現する方法。例）アナログ温度計・針の時計。</li>
+<li><span class="h" data-item="99" data-level="1">デジタル</span>：連続的な量を一定の間隔で<span class="h" data-item="100" data-level="5">区切り</span>、<span class="h" data-item="101" data-level="3">離散的</span>な数値で表現する方法。例）デジタル温度計は24.9℃の次は<span class="h" data-item="102" data-level="6">25.0</span>℃（最小単位0.1℃なら間は表現できない）。</li>
+</ul>
+<h3 class="sec">2　コンピュータのデジタル表現</h3>
+<p>コンピュータ内部では電圧の高低、光ディスク（CD/DVD）では記録面の<span class="h" data-item="103" data-level="5">高さ</span>が変化する部分（ピット／ランド）と変化しない部分を、それぞれ<span class="h" data-item="104" data-level="3">1と0</span>に対応させている。0と1の組み合わせで数を表現する方法＝<span class="h" data-item="105" data-level="1">2進法</span>、表された数＝<span class="h" data-item="106" data-level="1">2進数</span>。</p>
+<h3 class="sec">3　情報量とその単位</h3>
+<ul>
+<li>情報量の最小単位＝<span class="h" data-item="107" data-level="1">ビット（bit）</span>。2進数の<span class="h" data-item="108" data-level="5">1桁</span>に相当。</li>
+<li><span class="h" data-item="109" data-level="2">8</span>ビット＝<span class="h" data-item="110" data-level="1">1バイト（B）</span>。</li>
+<li>2<sup>10</sup>＝<span class="h" data-item="111" data-level="2">1024</span>倍ごとに、1<span class="h" data-item="112" data-level="2">KB</span>＝1024B、1<span class="h" data-item="113" data-level="2">MB</span>＝1024KB、1<span class="h" data-item="114" data-level="2">GB</span>＝1024MB、1<span class="h" data-item="115" data-level="2">TB</span>＝1024GB。</li>
+<li>通信速度の単位＝<span class="h" data-item="116" data-level="1">bps</span>（bits per second：1秒間に伝わるビット数）。1kbps＝<span class="h" data-item="117" data-level="2">1000</span>bps。</li>
+</ul>
+<div class="rei"><div class="rei-h">Plus　表現できる情報の数</div><div class="rei-b">
+    1ビットでは0と1の<span class="h" data-item="118" data-level="5">2</span>種類を表せる。一般に、nビットで表現できる情報の種類は<span class="h" data-item="119" data-level="3">2<sup>n</sup></span>種類である。例：4ビットでは2<sup>4</sup>＝<span class="h" data-item="120" data-level="4">16</span>種類、8ビットでは2<sup>8</sup>＝<span class="h" data-item="121" data-level="4">256</span>種類。
+  </div></div>
+<h3 class="sec">4　進法の関係</h3>
+<ul>
+<li>10進法：0〜9の<span class="h" data-item="122" data-level="5">10</span>種類の数字。2進法は桁数が多くなるため、0〜9とA〜Fの<span class="h" data-item="123" data-level="5">16</span>種類の文字を使う<span class="h" data-item="124" data-level="1">16進法</span>も使われる（2進数<span class="h" data-item="125" data-level="4">4</span>
