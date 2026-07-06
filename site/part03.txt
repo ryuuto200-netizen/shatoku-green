@@ -1,0 +1,69 @@
+s="h" data-item="34" data-level="2">パンくずリスト</span>（童話「ヘンゼルとグレーテル」に由来）。</li>
+<li><span class="h" data-item="35" data-level="1">階層構造</span>：現在地を把握しやすいが、階層が<span class="h" data-item="36" data-level="5">深い</span>と目的ページまでのクリック数が増える。</li>
+<li><span class="h" data-item="37" data-level="1">網状構造</span>：リンクが多くページ間の移動が<span class="h" data-item="38" data-level="5">しやすい</span>が、サイトの全体像がとらえ<span class="h" data-item="39" data-level="5">にくい</span>。</li>
+</ul>
+<div class="rei"><div class="rei-h">例題1　Webサイトの構造と特徴</div><div class="rei-b">
+    現在位置や全体構成を把握しやすいのは<span class="h" data-item="40" data-level="6">階層構造</span>、ページ間を自由に移動しやすいのは<span class="h" data-item="41" data-level="6">網状構造</span>。一方、階層が深すぎるとクリック数が増え、網状構造はリンクが多すぎると全体像を把握しにくくなる。
+  </div></div>
+</section>
+<!-- ============ p.50-51 ============ -->
+<section class="page">
+<div class="pg">p.50–51</div>
+<div class="unit-bar"><div class="unit-num">10</div><div class="unit-title"><b>Webページの作成</b><small>基本構成／リンク・画像・動画の設定</small></div></div>
+<div class="secline"><button onclick="secAll(this)">このページを一括切替</button></div>
+<h3 class="sec">3　Webページの作成</h3>
+<h4 class="sub">1　Webページの基本構成</h4>
+<p>Webページは、タイトルや文字コードの指定などページに関する情報を記述する<span class="h" data-item="42" data-level="1">ヘッダ</span>と、ブラウザに表示される情報を記述する<span class="h" data-item="43" data-level="1">ボディ</span>からなる。</p>
+<div class="code">&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;   ← このWebページが<span class="h" data-item="44" data-level="5">日本語</span>で記述されていることを示す
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;  ← 文字コードが <span class="h" data-item="45" data-level="3">UTF-8</span>（Unicodeの一種）であることを示す
+  &lt;title&gt;日本の世界遺産&lt;/title&gt; ← ブラウザの<span class="h" data-item="46" data-level="5">タブ名やブックマーク登録時</span>のタイトル
+&lt;/head&gt;
+&lt;body&gt; …本文… &lt;/body&gt;
+&lt;/html&gt;</div>
+<h4 class="sub">表　文字コードの種類</h4>
+<table>
+<tr><th>文字コード</th><th>種類</th></tr>
+<tr><td>Shift_JIS</td><td><span class="h" data-item="47" data-level="4">シフトJIS</span></td></tr>
+<tr><td>UTF-8</td><td><span class="h" data-item="48" data-level="4">Unicode</span>（の一種）</td></tr>
+<tr><td>ISO-2022-JP</td><td><span class="h" data-item="49" data-level="4">JIS</span></td></tr>
+<tr><td>EUC-JP</td><td><span class="h" data-item="50" data-level="4">EUC</span></td></tr>
+</table>
+<p class="note">HTMLファイルをブラウザ上で正しく表示するには、指定した文字コードで保存する必要がある（違うと<b>文字化け</b>）。</p>
+<h4 class="sub">2　リンクの設定</h4>
+<p>他のWebページへのリンクは<span class="h" data-item="51" data-level="1">a</span>タグ（anchor）で設定する。</p>
+<div class="rei"><div class="rei-h">例題2　リンクの設定</div><div class="rei-b">
+<div class="code" style="margin:0">&lt;td&gt;&lt;a href="<span class="h" data-item="52" data-level="6">kouro.html</span>"&gt;八幡製鐵所東田第一高炉&lt;/a&gt;&lt;/td&gt;
+※同じフォルダ内のファイルへは<span class="h" data-item="53" data-level="3">相対パス</span>で指定できる</div>
+</div></div>
+<h4 class="sub">3　画像、動画の設定</h4>
+<ul>
+<li>画像や動画は<span class="h" data-item="54" data-level="5">別のファイル</span>として用意し、表示したい位置に <span class="h" data-item="55" data-level="1">img</span> タグや <span class="h" data-item="56" data-level="1">video</span> タグで挿入する。ファイルサイズが大きいため適切な大きさに調整しておく。</li>
+<li><b>alt属性</b>：画像が表示できない場合の<span class="h" data-item="57" data-level="3">代替テキスト</span>。音声読み上げにも使われる。</li>
+<li><b>controls属性</b>（video）：<span class="h" data-item="58" data-level="4">再生・停止などのボタン</span>を表示する。</li>
+</ul>
+<div class="code">&lt;img src="images/suisha.jpg" <span class="h" data-item="59" data-level="3">alt</span>="朝倉三連水車"&gt;
+&lt;video src="movies/suisha.mp4" <span class="h" data-item="60" data-level="3">controls</span>&gt;&lt;/video&gt;</div>
+<h4 class="sub">4　外部サービスの埋め込み</h4>
+<p>地図や動画共有サイトのコンテンツは、サイトが指定するHTMLの記述を <span class="h" data-item="61" data-level="1">iframe</span>（inline frame）タグに記述してページに埋め込める。ただし<span class="h" data-item="62" data-level="5">安全性が低い</span>Webページは埋め込まないなど注意が必要。</p>
+</section>
+<!-- ============ p.52-53 ============ -->
+<section class="page">
+<div class="pg">p.52–53</div>
+<div class="unit-bar"><div class="unit-num">10</div><div class="unit-title"><b>CSSの活用／Webページの公開</b><small>スタイル指定・公開・評価と改善</small></div></div>
+<div class="secline"><button onclick="secAll(this)">このページを一括切替</button></div>
+<h3 class="sec">5　CSSの活用</h3>
+<p>文字や背景の色・大きさ・表示位置などのスタイルを指定する技術が <span class="h" data-item="63" data-level="1">CSS</span>（Cascading Style Sheets）。HTMLに直接書く方法もあるが、別ファイルにして読み込ませることで、文書の<span class="h" data-item="64" data-level="3">構造とスタイルを分離</span>して管理でき、複数ページのスタイルを<span class="h" data-item="65" data-level="5">一斉に変更</span>したり統一感を持たせたりできる。</p>
+<div class="code">HTML側（ヘッダ部）:
+&lt;link rel="stylesheet" href="<span class="h" data-item="66" data-level="6">css/style.css</span>"&gt;
+
+CSS側（style.css）:
+h1 { color: <span class="h" data-item="67" data-level="6">red</span>; }      ← 見出し1の文字色を赤に
+h2 { color: blue; }</div>
+<h4 class="sub">表2　CSSプロパティの例</h4>
+<table>
+<tr><th>設定</th><th>書式</th></tr>
+<tr><td>文字色</td><td><span class="h" data-item="68" data-level="3">color</span>: 色;</td></tr>
+<tr><td>背景色</td><td><span class="h" data-item="69" data-level="3">background-color</span>: 色;</td></tr>
+<tr><td>境界線</td><td><span class="h" data-item="70" data-level="3">border</span>: スタイル 太さ 色;（太さはピクセル単位、例 1px）<br/>スタイル例：<span class="h" data-item="71" data-level="4">solid</span>＝実線、<span class="h" data-item="72" data-level="4">dotted</span>＝点線、<s
