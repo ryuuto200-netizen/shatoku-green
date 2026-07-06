@@ -1,0 +1,125 @@
+が高い。</li>
+</ul>
+<h3 class="sec">4　画像の圧縮形式と特徴</h3>
+<table>
+<tr><th>形式</th><th>特徴</th></tr>
+<tr><td>BMP</td><td><span class="h" data-item="276" data-level="4">非圧縮</span>。すべての画素の情報を保存するためデータ量が<span class="h" data-item="277" data-level="5">大きい</span></td></tr>
+<tr><td>GIF</td><td><span class="h" data-item="278" data-level="4">256</span>色以下。<span class="h" data-item="279" data-level="4">可逆</span>圧縮（<span class="h" data-item="280" data-level="4">LZW</span>方式）。色数が少ない<span class="h" data-item="281" data-level="4">イラスト</span>などに適する。徐々に変化するグラデーションは苦手</td></tr>
+<tr><td>JPEG</td><td>色数が多く隣接画素との<span class="h" data-item="282" data-level="4">差分</span>を利用して圧縮。<span class="h" data-item="283" data-level="4">写真</span>などに適するが、色が急激に変化する境界線部分は苦手</td></tr>
+</table>
+<p class="note">縦縞の画像と、それを90°回転した横縞の画像では、BMP形式はデータ量に差がないが、GIF形式は<b>横方向</b>に圧縮を行うため横縞の方が小さくなる。</p>
+</section>
+</main>
+<footer>
+<button class="gbtn o" onclick="allSet(true)">対象をすべて表示</button>
+<button class="gbtn" onclick="allSet(false)">対象をすべて隠す</button>
+</footer>
+<script>
+  const spans = Array.from(document.querySelectorAll('.h'));
+  const cnt = document.getElementById('cnt');
+  const levelButtons = Array.from(document.querySelectorAll('[data-set-level]'));
+  const levelNames = {1:'最重要', 2:'教科書太文字', 3:'レベル3', 4:'レベル4', 5:'レベル5', 6:'最大'};
+  let currentLevel = 2;
+
+  function isEligible(s){ return Number(s.dataset.level || 6) <= currentLevel; }
+  function cumulativeCount(level){ return spans.filter(s => Number(s.dataset.level || 6) <= level).length; }
+  function update(){
+    const eligible = spans.filter(isEligible);
+    const open = eligible.filter(s => s.classList.contains('open')).length;
+    cnt.textContent = levelNames[currentLevel] + '｜対象 ' + eligible.length + ' / ' + spans.length + '｜表示 ' + open;
+    levelButtons.forEach(btn => {
+      const lv = Number(btn.dataset.setLevel);
+      btn.classList.toggle('active', lv === currentLevel);
+      btn.setAttribute('aria-pressed', lv === currentLevel ? 'true' : 'false');
+      const c = btn.querySelector('.lv-count');
+      if(c) c.textContent = cumulativeCount(lv) + '箇所';
+    });
+  }
+  function applyLevel(level, save=true){
+    currentLevel = Math.max(1, Math.min(6, Number(level) || 2));
+    spans.forEach(s => {
+      const eligible = isEligible(s);
+      s.classList.toggle('inactive', !eligible);
+      s.classList.toggle('eligible', eligible);
+      s.classList.remove('open');
+      s.setAttribute('aria-disabled', eligible ? 'false' : 'true');
+    });
+    if(save){ try{ localStorage.setItem('jouhou1AkasheetLevel', String(currentLevel)); }catch(e){} }
+    update();
+  }
+  spans.forEach(s => {
+    s.setAttribute('role','button'); s.setAttribute('tabindex','0');
+    const toggle = () => { if(!isEligible(s)) return; s.classList.toggle('open'); update(); };
+    s.addEventListener('click', toggle);
+    s.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } });
+  });
+  levelButtons.forEach(btn => btn.addEventListener('click', () => applyLevel(Number(btn.dataset.setLevel))));
+  function allSet(show){
+    spans.forEach(s => { if(isEligible(s)) s.classList.toggle('open', show); else s.classList.remove('open'); }); update();
+  }
+  function secAll(btn){
+    const sec = btn.closest('section');
+    const hs = Array.from(sec.querySelectorAll('.h')).filter(isEligible);
+    if(!hs.length) return;
+    const anyClosed = hs.some(s => !s.classList.contains('open'));
+    hs.forEach(s => s.classList.toggle('open', anyClosed)); update();
+  }
+  let savedLevel = 2;
+  try{ const raw = Number(localStorage.getItem('jouhou1AkasheetLevel')); if(raw >= 1 && raw <= 6) savedLevel = raw; }catch(e){}
+  applyLevel(savedLevel, false);
+
+
+  // ヘッダー自動収納：下へ読むと隠れ、少しでも上へ戻すと再表示する。
+  const topHeader = document.querySelector('header.top');
+  let lastScrollY = Math.max(0, window.scrollY);
+  let scrollTicking = false;
+  let downwardTravel = 0;
+  let upwardTravel = 0;
+
+  function showTopHeader(){
+    topHeader.classList.remove('is-hidden');
+  }
+
+  function hideTopHeader(){
+    if(!topHeader.matches(':focus-within')) topHeader.classList.add('is-hidden');
+  }
+
+  function handleHeaderScroll(){
+    const currentY = Math.max(0, window.scrollY);
+    const delta = currentY - lastScrollY;
+    const hideStart = Math.max(90, topHeader.offsetHeight * 0.8);
+
+    if(currentY <= 16){
+      showTopHeader();
+      downwardTravel = 0;
+      upwardTravel = 0;
+    }else if(delta > 0){
+      downwardTravel += delta;
+      upwardTravel = 0;
+      if(currentY > hideStart && downwardTravel >= 18) hideTopHeader();
+    }else if(delta < 0){
+      upwardTravel += -delta;
+      downwardTravel = 0;
+      if(upwardTravel >= 6) showTopHeader();
+    }
+
+    lastScrollY = currentY;
+    scrollTicking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if(!scrollTicking){
+      scrollTicking = true;
+      requestAnimationFrame(handleHeaderScroll);
+    }
+  }, {passive:true});
+
+  topHeader.addEventListener('focusin', showTopHeader);
+  topHeader.addEventListener('pointerdown', showTopHeader);
+  window.addEventListener('pageshow', () => {
+    lastScrollY = Math.max(0, window.scrollY);
+    if(lastScrollY <= 16) showTopHeader();
+  });
+</script>
+</body>
+</html>
