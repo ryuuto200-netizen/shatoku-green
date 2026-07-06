@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>情報Ⅰ 期末範囲 赤シート（6段階・自動収納版）</title>
+<style>
+  :root{
+    --teal:#00857c; --teal-dark:#005f59; --teal-pale:#e4f2f1;
+    --ink:#1d2726; --paper:#fdfdfb; --line:#c9d6d4;
+    --hide:#c0392b; --hide-bg:#c0392b;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  body{margin:0; background:#eef1f0; color:var(--ink);
+       font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif;
+       font-size:15px; line-height:1.75;}
+  header.top{position:sticky; top:0; z-index:20; background:var(--teal-dark); color:#fff;
+       padding:10px 14px; display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  header.top h1{font-size:15px; margin:0; font-weight:700; flex:1;}
+  header.top .cnt{font-size:12px; opacity:.85;}
+  button.gbtn{border:0; border-radius:20px; padding:7px 14px; font-size:13px; font-weight:700;
+       background:#fff; color:var(--teal-dark); cursor:pointer;}
+  main{max-width:760px; margin:0 auto; padding:14px 10px 90px;}
+  section.page{background:var(--paper); border:1px solid var(--line); border-radius:6px;
+       margin:0 0 26px; padding:0 0 18px; box-shadow:0 2px 6px rgba(0,0,0,.06); overflow:hidden;}
+  .unit-bar{display:flex; align-items:stretch; border-bottom:3px solid var(--teal);}
+  .unit-num{background:var(--teal); color:#fff; font-size:26px; font-weight:800;
+       padding:8px 16px; display:flex; align-items:center;}
+  .unit-title{padding:8px 14px; display:flex; flex-direction:column; justify-content:center;}
+  .unit-title b{font-size:18px;}
+  .unit-title small{color:#5a6b69; font-size:11.5px;}
+  .pg{float:right; font-size:11px; color:#8a9997; padding:6px 10px;}
+  h3.sec{background:var(--teal-pale); border-left:6px solid var(--teal); color:var(--teal-dark);
+       font-size:15px; margin:18px 12px 8px; padding:5px 10px; border-radius:3px;}
+  h4.sub{color:var(--teal-dark); font-size:14px; margin:14px 14px 4px;
+       padding-left:10px; border-left:3px double var(--teal);}
+  p, ul{margin:6px 16px;}
+  ul{padding-left:20px;}
+  li{margin:3px 0;}
+  table{border-collapse:collapse; margin:8px 16px; font-size:13.5px; width:calc(100% - 32px);}
+  th,td{border:1px solid #9db6b3; padding:4px 8px; text-align:left; vertical-align:top;}
+  th{background:var(--teal-pale); color:var(--teal-dark); font-weight:700; white-space:nowrap;}
+  .code{font-family:"Menlo","Consolas",monospace; background:#f0f4f3; border:1px solid var(--line);
+       border-radius:4px; margin:8px 16px; padding:8px 12px; font-size:13px; line-height:1.7;
+       overflow-x:auto; white-space:pre-wrap;}
+  .rei{border:1.5px solid var(--teal); border-radius:5px; margin:12px 16px; overflow:hidden;}
+  .rei .rei-h{background:var(--teal); color:#fff; font-size:12.5px; font-weight:700; padding:3px 10px;}
+  .rei .rei-b{padding:8px 12px;}
+  .note{font-size:12.5px; color:#556865; background:#f4f7f6; border-left:3px solid #9db6b3;
+       margin:8px 16px; padding:6px 10px; border-radius:3px;}
+  .h{cursor:pointer; border-radius:3px; padding:0 4px; font-weight:700;
+     background:var(--hide-bg); color:var(--hide-bg); transition:.15s;
+     box-shadow:inset 0 0 0 1px rgba(0,0,0,.12); user-select:none;}
+  .h.open{background:#ffe9e5; color:var(--hide);}
+  .secline{display:flex; justify-content:flex-end; padding:6px 16px 0;}
+  .secline button{border:1px solid var(--teal); background:#fff; color:var(--teal-dark);
+     font-size:12px; border-radius:14px; padding:4px 12px; cursor:pointer;}
+  footer{position:fixed; bottom:0; left:0; right:0; background:rgba(255,255,255,.96);
+     border-top:1px solid var(--line); padding:8px 12px; display:flex; gap:8px;
+     justify-content:center; z-index:20;}
+  footer button{flex:1; max-width:220px;}
+  button.gbtn.o{background:var(--teal); color:#fff;}
+  @media(min-width:600px){ body{font-size:15.5px;} }
+
+
+  /* 6段階の赤シート範囲切替 */
+  .level-switch{width:100%; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:5px;}
+  .level-btn{border:1px solid rgba(255,255,255,.55); border-radius:7px; padding:5px 3px;
+    background:rgba(255,255,255,.12); color:#fff; cursor:pointer; font-weight:700;
+    min-height:40px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    line-height:1.15; font-family:inherit;}
+  .level-btn .lv-name{font-size:11.5px; white-space:nowrap;}
+  .level-btn .lv-count{font-size:9.5px; opacity:.78; margin-top:3px; font-weight:500;}
+  .level-btn.active{background:#fff; color:var(--teal-dark); border-color:#fff;
+    box-shadow:0 1px 5px rgba(0,0,0,.18);}
+  .h.inactive{background:transparent !important; color:inherit !important; box-shadow:none !important;
+    cursor:default; padding:0; font-weight:inherit; user-select:text;}
+  .h.inactive.open{background:transparent !important; color:inherit !important;}
+  @media(max-width:560px){
+    .level-switch{grid-template-columns:repeat(3,minmax(0,1fr));}
+    .level-btn{min-height:36px;}
+    header.top .cnt{width:100%; order:3;}
+  }
+
+
+  /* 下スクロールで収納・上スクロールで再表示するヘッダー */
+  header.top{
+    transition:transform .24s ease, box-shadow .24s ease;
+    will-change:transform;
+    box-shadow:0 2p
