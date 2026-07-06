@@ -1,0 +1,53 @@
+lass="h" data-item="175" data-level="1">標本化周波数</span>という。標本化周波数[Hz]＝<span class="h" data-item="176" data-level="3">1÷標本化周期[秒]</span>。</li>
+<li>周波数が大きいほど音は<span class="h" data-item="177" data-level="5">高く</span>なる（波長は短い）。</li>
+<li>音楽CD：標本化周波数<span class="h" data-item="178" data-level="3">44100</span>Hz（44.1kHz）、量子化ビット数<span class="h" data-item="179" data-level="3">16</span>ビット（65536段階）。人間の可聴域上限<span class="h" data-item="180" data-level="3">20000</span>Hz（20〜20000Hz）の<span class="h" data-item="181" data-level="3">2倍</span>より高い周波数（標本化定理）。</li>
+<li>標本化周波数を大きく・量子化ビット数を多くするほど再現性は<span class="h" data-item="182" data-level="5">高く</span>なるが、データ量は<span class="h" data-item="183" data-level="5">増える</span>。</li>
+</ul>
+<h3 class="sec">4　画像のデジタル化</h3>
+<h4 class="sub">1　画像形式の種類</h4>
+<ul>
+<li><span class="h" data-item="184" data-level="1">ラスタ形式</span>：画像を<span class="h" data-item="185" data-level="1">画素（ピクセル）</span>の集まりとして表現。写真に適するが、拡大すると<span class="h" data-item="186" data-level="2">ジャギー</span>（ギザギザ）が生じる。拡張子：bmp, jpg など。</li>
+<li><span class="h" data-item="187" data-level="1">ベクタ形式</span>：基準点からの<span class="h" data-item="188" data-level="5">座標や角度</span>などで幾何学的に図形を表現。拡大縮小・変形・回転が容易でジャギーが生じず、<span class="h" data-item="189" data-level="5">ロゴマーク</span>などに適する。拡張子：svg, dxf など。</li>
+</ul>
+<h4 class="sub">2　カラー画像の表現</h4>
+<ul>
+<li>ディスプレイ：<span class="h" data-item="190" data-level="2">光の三原色</span>＝<span class="h" data-item="191" data-level="3">R（赤）・G（緑）・B（青）</span>。混ぜるほど<span class="h" data-item="192" data-level="5">白</span>に近づく＝<span class="h" data-item="193" data-level="1">加法混色</span>。</li>
+<li>プリンタ：<span class="h" data-item="194" data-level="2">色の三原色</span>＝<span class="h" data-item="195" data-level="3">C（シアン）・M（マゼンタ）・Y（イエロー）</span>。混ぜるほど<span class="h" data-item="196" data-level="5">黒</span>に近づく＝<span class="h" data-item="197" data-level="1">減法混色</span>（実際は<span class="h" data-item="198" data-level="3">K（黒）</span>を加えたCMYKの4色）。</li>
+</ul>
+<h4 class="sub">3　解像度</h4>
+<ul>
+<li>縦横に配置された画素の数＝<span class="h" data-item="199" data-level="2">画素数</span>。画像の画素の密度＝<span class="h" data-item="200" data-level="1">解像度</span>、単位は<span class="h" data-item="201" data-level="2">ppi</span>（pixels per inch：1インチ＝<span class="h" data-item="202" data-level="3">2.54</span>cmあたりの画素数）。プリンタ出力では<span class="h" data-item="203" data-level="2">dpi</span>。</li>
+<li>解像度を下げると画像は<span class="h" data-item="204" data-level="5">粗く</span>なるが、データ量は<span class="h" data-item="205" data-level="5">減る</span>。</li>
+</ul>
+<h4 class="sub">4　階調</h4>
+<ul>
+<li>各色の明るさの段階数＝<span class="h" data-item="206" data-level="1">階調</span>。R・G・Bを各<span class="h" data-item="207" data-level="3">8</span>ビット（<span class="h" data-item="208" data-level="3">256</span>階調）で量子化すると、256×256×256＝<span class="h" data-item="209" data-level="4">16777216</span>（約1677万）色。合計<span class="h" data-item="210" data-level="3">24</span>ビット＝<span class="h" data-item="211" data-level="1">24ビットフルカラー</span>（人が認識できるほぼすべての色）。</li>
+</ul>
+</section>
+<!-- ============ p.60-61 ============ -->
+<section class="page">
+<div class="pg">p.60–61</div>
+<div class="unit-bar"><div class="unit-num">12</div><div class="unit-title"><b>情報のデジタル化③</b><small>動画・立体の表現／データ量の計算</small></div></div>
+<div class="secline"><button onclick="secAll(this)">このページを一括切替</button></div>
+<h3 class="sec">5　動画のデジタル化</h3>
+<ul>
+<li>動画は静止画を連続的に表示したもの。1枚1枚の画像＝<span class="h" data-item="212" data-level="1">フレーム</span>、1秒あたりに再生するフレーム数＝<span class="h" data-item="213" data-level="1">フレームレート</span>（単位<span class="h" data-item="214" data-level="2">fps</span>）。大きいほど動きが<span class="h" data-item="215" data-level="5">滑らか</span>。</li>
+<li>日本のテレビ（地上デジタル放送）：約<span class="h" data-item="216" data-level="4">30</span>fps、高画質テレビ（4K放送）：約<span class="h" data-item="217" data-level="4">60</span>fps。</li>
+</ul>
+<h3 class="sec">6　立体の表現</h3>
+<h4 class="sub">1　三次元コンピュータグラフィックス</h4>
+<ul>
+<li>平面ディスプレイに立体物を表現する技術＝<span class="h" data-item="218" data-level="1">3DCG</span>（三次元コンピュータグラフィックス）。</li>
+<li>遠くの物体を<span class="h" data-item="219" data-level="5">小さく・淡く</span>描く、光源側を<span class="h" data-item="220" data-level="5">明るく</span>反対側を<span class="h" data-item="221" data-level="5">暗く</span>描くなど、奥行きや陰影を表現して立体感を生み出す。</li>
+</ul>
+<h4 class="sub">2　立体視</h4>
+<ul>
+<li>左右の目の位置の差により見え方がわずかに異なること＝<span class="h" data-item="222" data-level="1">視差</span>。左右の目に異なる画像を見せて立体感を得る。</li>
+<li>立体視には、<span class="h" data-item="223" data-level="5">赤青眼鏡</span>、<span class="h" data-item="224" data-level="5">偏光フィルタ</span>、<span class="h" data-item="225" data-level="5">液晶シャッタ</span>を利用する方式や、眼鏡を使わない<span class="h" data-item="226" data-level="5">裸眼立体視</span>がある。</li>
+<li><span class="h" data-item="227" data-level="1">VR</span>（仮想現実）／現実の視界にCG画像を付加する<span class="h" data-item="228" data-level="1">AR</span>（拡張現実）／現実と仮想を融合させる<span class="h" data-item="229" data-level="1">MR</span>（複合現実）にも立体表現が利用される。</li>
+</ul>
+<h3 class="sec">7　データ量の計算</h3>
+<div class="rei"><div class="rei-h">例題1　音声のデータ量（CD音質・1秒・ステレオ）</div><div class="rei-b">
+    音声[bit]＝<span class="h" data-item="230" data-level="3">標本化周波数 × 量子化ビット数 × チャンネル数 × 秒数</span><br/>
+    44.1×10<sup>3</sup>×1秒×16bit×2ch＝1,411,200bit → ÷(1024×8) ≒ <span class="h" data-item="231" data-level="6">172</span>KB
+  
