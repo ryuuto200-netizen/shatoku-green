@@ -1,0 +1,58 @@
+x 8px rgba(0,0,0,.18);
+  }
+  header.top.is-hidden{
+    transform:translate3d(0,-105%,0);
+    box-shadow:none;
+  }
+  @media (prefers-reduced-motion: reduce){
+    header.top{transition:none;}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+<h1>情報Ⅰ 期末範囲　赤シート学習（教科書骨格補完版）</h1>
+<span class="cnt" id="cnt"></span>
+<div aria-label="赤シート対象レベル" class="level-switch" role="group"><button class="level-btn" data-set-level="1" type="button"><span class="lv-name">最重要</span><small class="lv-count"></small></button><button class="level-btn" data-set-level="2" type="button"><span class="lv-name">教科書太文字</span><small class="lv-count"></small></button><button class="level-btn" data-set-level="3" type="button"><span class="lv-name">3</span><small class="lv-count"></small></button><button class="level-btn" data-set-level="4" type="button"><span class="lv-name">4</span><small class="lv-count"></small></button><button class="level-btn" data-set-level="5" type="button"><span class="lv-name">5</span><small class="lv-count"></small></button><button class="level-btn" data-set-level="6" type="button"><span class="lv-name">最大</span><small class="lv-count"></small></button></div></header>
+<main>
+<p class="note" style="margin-top:4px">上の6段階で赤シートの対象数を変更できます。レベルは<b>累積式</b>です。「教科書太文字」は、教科書写真で<b>太い黒文字</b>になっている語句だけを対象にしています。「最大」は従来と同じ全283箇所です。赤い部分はタップで表示／再タップで隠せます。</p>
+<!-- ============ p.48-49 ============ -->
+<section class="page">
+<div class="pg">p.48–49</div>
+<div class="unit-bar"><div class="unit-num">10</div><div class="unit-title"><b>Webサイトの設計</b><small>Webページ／サイトの構造設計</small></div></div>
+<div class="secline"><button onclick="secAll(this)">このページを一括切替</button></div>
+<h3 class="sec">1　Webページ</h3>
+<h4 class="sub">1　Webページの特徴</h4>
+<p><span class="h" data-item="1" data-level="2">WWW（World Wide Web）</span>の仕組みを用いてインターネット上で公開・閲覧できる文書が<b>Webページ</b>。文字・図表・画像・音声・動画・プログラムなどを組み合わせて構成でき、<span class="h" data-item="2" data-level="2">Webブラウザ</span>さえあればさまざまな端末で表示できる。</p>
+<h4 class="sub">2　Webページを記述する言語</h4>
+<p>Webページを記述する言語が <span class="h" data-item="3" data-level="1">HTML</span>（HyperText Markup Language）。<span class="h" data-item="4" data-level="1">タグ</span>と呼ばれる文字列で要素を指定し、多くは <span class="h" data-item="5" data-level="2">開始タグ</span> と <span class="h" data-item="6" data-level="2">終了タグ</span> で囲む。タグには動作方法や必要なファイル名を示す <span class="h" data-item="7" data-level="1">属性</span>（href、srcなど）を付けられる。タグは必ず<span class="h" data-item="8" data-level="6">半角</span>文字で入力する。</p>
+<h4 class="sub">表1　おもなタグ</h4>
+<table>
+<tr><th>タグ</th><th>内容</th></tr>
+<tr><td>&lt;html&gt;〜&lt;/html&gt;</td><td><span class="h" data-item="9" data-level="4">HTML文書である</span>ことを示す</td></tr>
+<tr><td>&lt;head&gt;〜&lt;/head&gt;</td><td><span class="h" data-item="10" data-level="4">ヘッダ情報</span>を示す</td></tr>
+<tr><td>&lt;body&gt;〜&lt;/body&gt;</td><td>文書の<span class="h" data-item="11" data-level="4">本体</span>を示す</td></tr>
+<tr><td>&lt;title&gt;〜&lt;/title&gt;</td><td><span class="h" data-item="12" data-level="4">タイトル</span>を示す</td></tr>
+<tr><td>&lt;hn&gt;〜&lt;/hn&gt;（n=1〜6）</td><td><span class="h" data-item="13" data-level="4">見出し</span>を示す（数字が<span class="h" data-item="14" data-level="6">小さい</span>ほど文字は大きい）</td></tr>
+<tr><td>&lt;br&gt;</td><td><span class="h" data-item="15" data-level="6">改行</span>する</td></tr>
+<tr><td>&lt;p&gt;〜&lt;/p&gt;</td><td><span class="h" data-item="16" data-level="6">段落</span>を示す</td></tr>
+<tr><td>&lt;a href="パス"&gt;〜&lt;/a&gt;</td><td><span class="h" data-item="17" data-level="3">ハイパーリンク</span>を指定する</td></tr>
+<tr><td>&lt;img src="パス"&gt;</td><td><span class="h" data-item="18" data-level="6">画像</span>を表示する</td></tr>
+<tr><td>&lt;table&gt; &lt;tr&gt; &lt;th&gt; &lt;td&gt;</td><td><span class="h" data-item="19" data-level="6">表</span>・表内の1行・見出しのセル・データのセル</td></tr>
+<tr><td>&lt;video src="パス"&gt;</td><td><span class="h" data-item="20" data-level="6">ビデオ（動画）</span>を表示する</td></tr>
+<tr><td>&lt;iframe src="パス"&gt;</td><td>他のWebページの内容を<span class="h" data-item="21" data-level="6">フレーム</span>表示する</td></tr>
+</table>
+<h4 class="sub">Plus　ファイル形式による構造化・パス</h4>
+<ul>
+<li>ファイルは種類別に<span class="h" data-item="22" data-level="3">フォルダ</span>で管理。階層の頂点を<span class="h" data-item="23" data-level="3">ルートフォルダ</span>という。</li>
+<li><span class="h" data-item="24" data-level="3">絶対パス</span>：階層の頂点からの経路をすべて示す。</li>
+<li><span class="h" data-item="25" data-level="3">相対パス</span>：現在の場所（フォルダ）から目的のファイルまでの経路を示す。例）同フォルダ内なら「suisha.jpg」、1つ上は「<span class="h" data-item="26" data-level="6">..</span>/」で表す。</li>
+</ul>
+<h3 class="sec">2　Webサイトの設計</h3>
+<p>同一の管理者が管理する複数のWebページのまとまりを<span class="h" data-item="27" data-level="1">Webサイト</span>という。</p>
+<h4 class="sub">1　コンテンツの企画</h4>
+<p>まず<span class="h" data-item="28" data-level="3">誰にどのような情報を提供するのか</span>（伝達対象と目的）を明確にし、提供する内容（<span class="h" data-item="29" data-level="1">コンテンツ</span>）を考え、整理・構造化する。サイトの全体構成が分かるよう、内容を一覧にした<span class="h" data-item="30" data-level="1">サイトマップ</span>を作成しておくとよい。</p>
+<h4 class="sub">2　Webサイトの構造設計</h4>
+<ul>
+<li>サイトの入り口にあたるページ＝<span class="h" data-item="31" data-level="1">トップページ</span>。ページどうしは<span class="h" data-item="32" data-level="1">ハイパーリンク</span>でつながる。</li>
+<li>ページ移動の誘導＝<span class="h" data-item="33" data-level="1">ナビゲーション</span>。現在位置を「ページA＞ページB＞ページC」のように示す表示＝<span clas
